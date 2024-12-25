@@ -31,7 +31,8 @@ def page_not_found(error):
 api.add_resource(ejemplo.EjemploRuta, '/ejemplo')
 api.add_resource(ejemplo.EjemploRutaParametro, "/ejemplo/<id>")
 api.add_resource(ejemplo.EjemploRutaUpload, '/ejemplo-upload')
-
+api.add_resource(ejemplo.EjemploRutaUploadS3, '/ejemplo-s3')
+api.add_resource(ejemplo.EjemploRutaUploadS3Imagen, "/ejemplo-s3-imagen")
 
 if __name__=='__main__':
     app.run(host="0.0.0.0", port=8080, debug=True)
