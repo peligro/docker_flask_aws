@@ -14,10 +14,27 @@ services:
       - "8080:8080"
     environment:
       - PYTHONUNBUFFERED=1
+      - MONGO_URI=mongodb://mongo:27017/mi_db
     networks:
       - custom_network
+    depends_on:
+      - mongo
   
+  
+  mongo:
+    image: mongo:6.0
+    container_name: mongo_service
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - custom_network
 
+
+
+volumes:
+  mongo-data:
 
 networks:
   custom_network:

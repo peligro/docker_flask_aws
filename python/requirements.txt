@@ -4,3 +4,4 @@ mysql-connector-python==9.1.0
 marshmallow==3.23.2
 python-dotenv==1.0.1
 boto3==1.35.87
+Flask-PyMongo==2.3.0

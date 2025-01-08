@@ -26,3 +26,16 @@ class EjemploSchema(Schema):
     def validate_nombre(self, value):
         if len(value) < 3:
             raise ValidationError('El nombre debe tener al menos 3 caracteres.')
+
+
+
+class CategoriaSchema(Schema):
+    nombre = fields.Str(
+        required=True,
+        validate=validate.Length(min=1, error="El campo nombre es obligatorio")
+    )
+
+    @validates('nombre')
+    def validate_nombre(self, value):
+        if len(value) < 3:
+            raise ValidationError('El nombre debe tener al menos 3 caracteres.')
