@@ -1,9 +1,6 @@
 from flask_restful import Resource, request
-from flask import jsonify, Response
 from marshmallow.exceptions import ValidationError
-import os
 from .dto import CategoriaSchema
-from datetime import datetime
 from bson.objectid import ObjectId
 
 

@@ -1,6 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_restful import Resource, Api
-from rutas import ejemplo, categorias
+from rutas import ejemplo, categorias, recetas
 from flask_pymongo import PyMongo
 
 
@@ -49,8 +49,11 @@ api.add_resource(ejemplo.EjemploRutaUploadS3Imagen, "/ejemplo-s3-imagen")
 
 
 categorias.init_db(mongo)
-api.add_resource(categorias.CategoriaRuta, '/categoria')
-api.add_resource(categorias.CategoriaRutaParametro, "/categoria/<id>")
+api.add_resource(categorias.CategoriaRuta, '/categorias')
+api.add_resource(categorias.CategoriaRutaParametro, "/categorias/<id>")
+
+recetas.init_db(mongo)
+api.add_resource(recetas.RecetaRuta, '/recetas')
 
 
 
